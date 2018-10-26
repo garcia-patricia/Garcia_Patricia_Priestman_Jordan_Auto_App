@@ -1,0 +1,23 @@
+{
+  "name": "garcia_patricia_priestman_jordan_hw4_av_app",
+  "version": "1.0.0",
+  "description": "AV Auto App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/garcia-patricia/Garcia_Patricia_Priestman_Jordan_HW4_AV_App.git"
+  },
+  "author": "Patricia Garcia - Developer, Jordan Priestman - Designer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/garcia-patricia/Garcia_Patricia_Priestman_Jordan_HW4_AV_App/issues"
+  },
+  "homepage": "https://github.com/garcia-patricia/Garcia_Patricia_Priestman_Jordan_HW4_AV_App#readme",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^4.0.2"
+  }
+}
