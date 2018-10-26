@@ -1,4 +1,4 @@
-# Garcia_Patricia_Priestman_Jordan_HW4_AV_App
+# Garcia Patricia,Priestman Jordan AV App
 
 ## Project Details
 A Web application with interactive elements to create an engaging experience for the users. The user can explore specs with a 3D model of a car.
