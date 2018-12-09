@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Maserati Auto App</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+</head>
+  <body>
+
+
+
+<main id="app">
+<!-- open vue.js app -->
+<video autoplay muted loop id="landing-video">
+        <source src="videos/background-temp-video.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+
+<ul class="video-display">
+    <li v-for="car in cardata">
+            {{ description }}
+        <!-- <button :data-movie="video.id" v-on:click="fetchMore" class="more-details">More Details...</button> -->
+
+        <p>loop</p>  <!-- add a field to the DB (or subquery another table) and plug data in -->
+    </li>
+</ul>
+              
+</main><!-- close vue.js app -->
+  <script src="js/master.js"></script>
+  </body>
+</html>
