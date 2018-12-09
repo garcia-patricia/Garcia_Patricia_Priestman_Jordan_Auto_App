@@ -1,30 +1,41 @@
 (()=> {
-    function getData(){
-        let targetURL = `./includes/connect.php?modelNo=${this.id}`;
-        //event handler for car when clicked it would change modelNo=X
-        // for each 'car' add event handler, click, run function
+    const vm = new Vue({
+        el: '#app',
+        data: {
+            carname : "GranTurismo",
+            cardata : [],
+            singlecar : [],
 
-        fetch(targetURL) // go get the data and bring it back
-        .then(res => res.json()) // turn the result into a plai JS object
-        .then(data => {
-            console.log(data);
-        // run a function to parse our data
-        showCarData(data[0]);
-        }) // lets see what we got
-        .catch(function(error){
-        console.log(error); //if anything broke, log it into the console
-        });
-    }
-    function showCarData(data){
-        // parse the DB info and put it where it needs to go
-        const {modelName, pricing, modelDetails} = data; // destructuring assignment => MDN JS destructuring
+            title : "",
+            videosource : "",
+            description : "",
+            showDetails : false,
+        },
+        created : function() {
+            this.fetchMovieData(null);
+        },
+        methods : {
+            fetchMovieData(movie) {
+                url = movie ? `./includes/index.php?movie=${movie}` : './includes/index.php';
 
-        // grab the elements we need,and populate them with the data
-        document.querySelector('.modelName').textContent =  modelName;
-        document.querySelector('.priceInfo').textContent =  `$ ${pricing}.00`;
-        document.querySelector('.modelDetails').textContent =  modelDetails;
-
-    }
-    getData(); // trigger the getData function
+                fetch(url) // pass in the one or many query
+                .then(res => res.json())
+                .then(data => {
+                    if (movie) {
+                        // getting one movie, so use the single array
+                        console.log(data);
+                        this.singlecar = data;
+                    } else {
+                        // push all the video (or portfolio content) into the video array
+                        console.log(data);
+                        this.cardata = data;
+                        //debugger;
+                    }
+                })
+                .catch(function(error) {
+                    console.log(error);
+                });
+            }
+        }
+    });
 })();
-
